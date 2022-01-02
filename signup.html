@@ -1,0 +1,82 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
+ 
+ 
+ 
+<html> 
+ 
+ 
+ 
+<head> 
+<style> 
+body{
+background-color:skyblue;
+text-align:center;
+}
+
+ 
+.navbar a{ 
+  float:right; 
+  display:block; 
+  color:whitesmoke; 
+   
+  padding:14px 16px; 
+  text-decoration:none; 
+  font-size:0.98em; 
+} 
+ 
+.navbar a:hover{ 
+  background-color:powderblue; 
+  color:whitesmoke; 
+  font-weight:bold; 
+  font-size:1.1em; 
+  text-align: center;
+} 
+ 
+</style> 
+<title>Add Customer Record</title> 
+</head> 
+ 
+ 
+ 
+<body> 
+ 
+<div class="navbar tab" id="navbar"> 
+     <a href="/index" class="nav-link active">Home</a> 
+     <a href="/signup" class="nav-link active">SignUp</a> 
+     <a href="{% url 'login' %}" class="nav-link">Login</a> 
+    <a href="{% url 'contactus' %}" class="nav-link">Contact Us</a> 
+    <a href="/viewcustomers" class="nav-link">View Customers </a> 
+</div> 
+ 
+ 
+<h3 align=center>Add Customer Record</h3> 
+ 
+ 
+ 
+<form:form method="post" action="/submitcustdata" modelAttribute="customer"> 
+ 
+ 
+Enter Customer Aadhar No <form:input path="username"/></br> 
+Enter Customer First_name <form:input path="first_name"/><br> 
+Enter Customer Last_name <form:input path="last_name"/><br> 
+Enter Customer Email <form:input path="email"/><br> 
+Enter Customer Mobile_no <form:input path="mobile_no"/><br> 
+Enter Customer Address <form:input path="address" /><br> 
+Enter Customer Password <form:input path="password" /><br> 
+Enter Customer Confirm_Password <form:input path="confirm_password" /><br> 
+ 
+ 
+ 
+<input type="submit" value="Add Customer">    
+ 
+ 
+ 
+</form:form> 
+ 
+ 
+ 
+</body> 
+ 
+ 
+ 
+</html>

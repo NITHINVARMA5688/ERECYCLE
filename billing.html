@@ -1,0 +1,188 @@
+
+
+<html>
+<head>
+  <script type="text/javascript">
+  function show_alert() {
+  alert("Order Placed Succesfully");
+}
+
+</script>
+  <style>
+    body {
+
+  background: #C3E6F3 no-repeat center center fixed;
+  margin: 0 auto;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", "sans-serif";
+  /* IE Fallback */
+  background: #c3e6f4;
+  width: 100%;
+  height: 100%;
+}
+
+
+.blueButton {
+  -moz-box-shadow: inset 0px -3px 7px 0px #29bbff;
+  -webkit-box-shadow: inset 0px -3px 7px 0px #29bbff;
+  box-shadow: inset 0px -3px 7px 0px #29bbff;
+  background-color: #0088BB;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #0088BB;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 9px 23px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #263666;
+
+}
+
+.blueButton:hover {
+  background-color: #369cb8;
+}
+
+.blueButton:active {
+  position: relative;
+  top: 1px;
+}
+
+
+.payment input[type=text] {
+  width: 95%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: none;
+  text-align: left;
+}
+
+.payment input[type=text]:focus {
+  border: 1px solid #a8a8a8;
+}
+
+.payment input[type=submit],
+.payment input[type=button] {
+  float: right;
+  margin: -20px 20px 10px 0px;
+}
+
+.payment {
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  padding: 40px;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 20px;
+  box-shadow: 1px 1px 5px #888888;
+}
+
+
+/******************************************************************
+Below is the form for the confirm order table
+******************************************************************/
+
+/* CSS for Credit Card Payment form */
+.credit-card-box .panel-title {
+    display: inline;
+    font-weight: bold;
+}
+.credit-card-box .form-control.error {
+    border-color: red;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
+}
+.credit-card-box label.error {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+.credit-card-box .payment-errors {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+.credit-card-box label {
+    display: block;
+}
+/* The old "center div vertically" hack */
+.credit-card-box .display-table {
+    display: table;
+}
+.credit-card-box .display-tr {
+    display: table-row;
+}
+.credit-card-box .display-td {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+}
+.credit-card-box .panel-heading img {
+    min-width: 180px;
+}
+h3{
+background: black;
+  color: white;
+  text-align:centre;
+}
+
+  </style>
+  </head>
+<body>
+<form class="payment">
+
+  <body>
+    <div class="panel panel-default credit-card-box">
+      <div class="panel-heading display-table">
+        <div class="row display-tr">
+
+          <h3 class="panel-title display-td">Payment Details</h3>
+
+          <br>
+
+        </div>
+      </div>
+    </div>
+    <br>
+    <h4 class="panel-title">Price Details</h4>
+                <label for="inputId">Total Amount</label>
+                <input type="id" id="inputId" class="form-control" placeholder="Amount " required>
+               <br><br>
+                <label for="couponCode">Discount Code</label>
+                <input type="couponCode" id="couponCode" class="form-control" placeholder="couponCode" required>
+
+    <br>
+    <br>
+
+    <label for="cardNumber">CARD NUMBER</label>
+    <input type="text" size="10" class="form-control" id="cardNumber" name="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" required autofocus />
+    <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+    <label for="cardExpiry">EXPIRATION DATE</label>
+    <input type="text" size="5" class="form-control" id="cardExpiry"name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required />
+    <label for="cardCVC">CV CODE</label>
+    <input type="text" size="3" class="form-control" id="cardCVC" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required />
+
+    <br>
+
+    <div class="blueButton">
+        <span style="float:right;">
+			<a class="blueButton" onclick="show_alert()"><button>Confirm Payment</button></a></span>
+      </div>
+    <p>Order Placed Successfully ? back to <a href="{% url 'dashboard' %}">dashboard</a></p>
+  </body>
+</form>
+
+<!-- If you're using Stripe for payments -->
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+</form>
+</body>
+</body>
+</html>
